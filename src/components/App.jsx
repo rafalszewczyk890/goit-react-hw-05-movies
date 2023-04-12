@@ -1,20 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 import { HomePage } from './pages/HomePage';
 import { MoviesPage } from './pages/MoviesPage';
 import { MovieDetailsPage } from './pages/MovieDetailsPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { Cast } from './Cast';
 import { Reviews } from './Reviews';
+import { SharedLayout } from './SharedLayout';
 
 export const App = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/movies" element={<MoviesPage />} />
-        <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
