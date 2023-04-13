@@ -44,11 +44,7 @@ export const MovieDetailsPage = () => {
       <h3>Overview</h3>
       <div>{movie.overview}</div>
       <h3>Genres</h3>
-      <div>
-        {movie.genres.map(genre => {
-          return genre.name;
-        })}
-      </div>
+
       <StyledNavLink to="cast">See cast</StyledNavLink>
       <StyledNavLink to="reviews">See reviews</StyledNavLink>
       <Outlet />
