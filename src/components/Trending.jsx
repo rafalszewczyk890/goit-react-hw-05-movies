@@ -1,8 +1,10 @@
+import { TrendingMovieLink } from './TrendingMovieLink';
+
 export const Trending = ({ trendingMovies }) => {
   return (
     <ul>
       {trendingMovies.map(trendingMovie => (
-        <li key={trendingMovie.id}>{trendingMovie.title}</li>
+        <TrendingMovieLink id={trendingMovie.id} title={trendingMovie.title} />
       ))}
     </ul>
   );
