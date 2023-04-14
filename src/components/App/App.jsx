@@ -1,12 +1,12 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { HomePage } from './pages/HomePage';
-import { MoviesPage } from './pages/MoviesPage';
-import { MovieDetailsPage } from './pages/MovieDetailsPage';
-import { NotFoundPage } from './pages/NotFoundPage';
-import { Cast } from './Cast';
-import { Reviews } from './Reviews';
-import { SharedLayout } from './SharedLayout';
+import { HomePage } from '../../pages/HomePage/HomePage';
+import { MoviesPage } from '../../pages/MoviesPage/MoviesPage';
+import { MovieDetailsPage } from '../../pages/MovieDetailsPage/MovieDetailsPage';
+import { NotFoundPage } from '../../pages/NotFoundPage/NotFoundPage';
+import { Cast } from '../Cast/Cast';
+import { Reviews } from '../Reviews/Reviews';
+import { SharedLayout } from '../SharedLayout/SharedLayout';
 
 export const App = () => {
   return (

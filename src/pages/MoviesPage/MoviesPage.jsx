@@ -1,6 +1,6 @@
-import { Searchbar } from 'components/Searchbar';
+import { Searchbar } from 'components/Searchbar/Searchbar';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Trending } from 'components/Trending';
+import { MovieList } from 'components/MovieList/MovieList';
 import { useState } from 'react';
 import axios from 'axios';
 
@@ -29,7 +29,7 @@ export const MoviesPage = () => {
       <Searchbar onSubmit={handleSubmit} />
       <div>MoviesPage</div>
       <p>Searching for: {query}</p>
-      <Trending trendingMovies={foundMovies} />
+      <MovieList movies={foundMovies} />
     </>
   );
 };

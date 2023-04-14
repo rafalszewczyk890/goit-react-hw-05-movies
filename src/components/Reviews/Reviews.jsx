@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { ReviewItem } from './ReviewItem';
+import { ReviewItem } from '../ReviewItem/ReviewItem';
 import axios from 'axios';
 
 export const Reviews = () => {

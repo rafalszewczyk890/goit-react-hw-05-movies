@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { CastMember } from './CastMember';
+import { CastMember } from '../CastMember/CastMember';
 import axios from 'axios';
 
 export const Cast = () => {

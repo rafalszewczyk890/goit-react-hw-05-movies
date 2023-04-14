@@ -1,4 +1,4 @@
-import { Trending } from 'components/Trending';
+import { MovieList } from 'components/MovieList/MovieList';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -19,7 +19,7 @@ export const HomePage = () => {
   return (
     <>
       <div>Homepage</div>
-      <Trending trendingMovies={trendingMovies} />
+      <MovieList movies={trendingMovies} />
     </>
   );
 };
