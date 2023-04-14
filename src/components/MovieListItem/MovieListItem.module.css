@@ -1,0 +1,20 @@
+.MovieTitle {
+  margin: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+  padding: 5px;
+  list-style: none;
+  width: fit-content;
+  -webkit-box-shadow: 4px 4px 2px 4px rgba(0, 0, 0, 1);
+  -moz-box-shadow: 4px 4px 2px 4px rgba(0, 0, 0, 1);
+  box-shadow: 4px 4px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.MovieLink {
+  text-decoration: none;
+  color: black;
+}
+
+.MovieLink:hover {
+  color: orange;
+}

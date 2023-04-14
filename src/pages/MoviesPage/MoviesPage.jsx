@@ -1,7 +1,7 @@
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { MovieList } from 'components/MovieList/MovieList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 export const MoviesPage = () => {
@@ -10,10 +10,10 @@ export const MoviesPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [foundMovies, setFoundMovies] = useState([]);
 
+  const navigate = useNavigate();
   const query = searchParams.get('query');
 
-  console.log(query);
-  const navigate = useNavigate();
+  useEffect(() => {}, []);
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -28,8 +28,8 @@ export const MoviesPage = () => {
     <>
       <Searchbar onSubmit={handleSubmit} />
       <div>MoviesPage</div>
-      <p>Searching for: {query}</p>
-      <MovieList movies={foundMovies} />
+
+      {foundMovies.length > 1 && <MovieList movies={foundMovies} />}
     </>
   );
 };
