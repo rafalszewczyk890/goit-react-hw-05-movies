@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { HomePage } from '../../pages/HomePage/HomePage';
 import { MoviesPage } from '../../pages/MoviesPage/MoviesPage';
 import { MovieDetailsPage } from '../../pages/MovieDetailsPage/MovieDetailsPage';
@@ -8,6 +8,9 @@ import { Reviews } from '../Reviews/Reviews';
 import { SharedLayout } from '../SharedLayout/SharedLayout';
 
 export const App = () => {
+  const location = useLocation();
+  console.log(location);
+
   return (
     <div>
       <Routes>

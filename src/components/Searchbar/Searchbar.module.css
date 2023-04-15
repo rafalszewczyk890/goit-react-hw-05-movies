@@ -4,10 +4,11 @@
   max-width: 1000px;
   justify-content: center;
   gap: 20px;
+  margin: 10px;
 }
 
 .Input {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 10px;
 }
@@ -27,4 +28,8 @@
 .Button:hover {
   background-color: #264653;
   cursor: pointer;
+}
+
+.Module {
+  justify-items: center;
 }

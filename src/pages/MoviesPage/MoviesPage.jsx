@@ -2,6 +2,7 @@ import { Searchbar } from 'components/Searchbar/Searchbar';
 import { useSearchParams } from 'react-router-dom';
 import { MovieList } from 'components/MovieList/MovieList';
 import { useState, useEffect } from 'react';
+import css from './MoviesPage.module.css';
 import axios from 'axios';
 
 export const MoviesPage = () => {
@@ -32,9 +33,10 @@ export const MoviesPage = () => {
 
   return (
     <>
+      <div className={css.Title}>Search movies!</div>
       <Searchbar onSubmit={handleSubmit} />
 
-      {foundMovies.length > 1 && (
+      {foundMovies.length > 0 && (
         <MovieList movies={foundMovies} title={'Search results'} />
       )}
     </>
