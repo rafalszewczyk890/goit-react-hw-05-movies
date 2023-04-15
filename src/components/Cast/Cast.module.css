@@ -5,3 +5,9 @@
   justify-content: center;
   list-style: none;
 }
+
+.NoCastFound {
+  font-weight: 800;
+  font-size: x-large;
+  color: #264653;
+}

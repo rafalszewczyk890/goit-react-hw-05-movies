@@ -22,17 +22,21 @@ export const Reviews = () => {
     fetch();
   }, []);
 
-  return (
-    <div>
-      <div className={css.ReviewList}>
-        {reviews.map(review => (
-          <ReviewItem
-            key={review.id}
-            author={review.author}
-            content={review.content}
-          />
-        ))}
+  if (reviews.length > 0) {
+    return (
+      <div>
+        <div className={css.ReviewList}>
+          {reviews.map(review => (
+            <ReviewItem
+              key={review.id}
+              author={review.author}
+              content={review.content}
+            />
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div className={css.NoReview}>No reviews for this movie</div>;
+  }
 };

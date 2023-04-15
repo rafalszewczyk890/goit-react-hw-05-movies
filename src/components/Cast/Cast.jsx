@@ -21,15 +21,22 @@ export const Cast = () => {
     };
     fetch();
   }, []);
+
   return (
-    <div className={css.CastContainer}>
-      {cast.map(actor => (
-        <CastMember
-          key={actor.id}
-          name={actor.name}
-          image={actor.profile_path}
-        />
-      ))}
-    </div>
+    <>
+      {cast.length > 0 ? (
+        <div className={css.CastContainer}>
+          {cast.map(actor => (
+            <CastMember
+              key={actor.id}
+              name={actor.name}
+              image={actor.profile_path}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className={css.NoCastFound}>No cast found</div>
+      )}
+    </>
   );
 };
