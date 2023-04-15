@@ -4,13 +4,19 @@
   padding: 10px;
   list-style: none;
   width: fit-content;
+  transition: 250ms;
+}
+
+.MovieTitle:hover {
+  box-shadow: 0px 0px 24px 0px #2a9d8f;
+}
+
+.MovieTitle:hover .MovieLink {
+  color: #2a9d8f;
 }
 
 .MovieLink {
   text-decoration: none;
   color: #264653;
-}
-
-.MovieLink:hover {
-  color: #2a9d8f;
+  transition: 250ms;
 }

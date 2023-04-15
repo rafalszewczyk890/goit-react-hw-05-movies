@@ -1,5 +1,5 @@
 import { Searchbar } from 'components/Searchbar/Searchbar';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { MovieList } from 'components/MovieList/MovieList';
 import { useState, useEffect } from 'react';
 import axios from 'axios';

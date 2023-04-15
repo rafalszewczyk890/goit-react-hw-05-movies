@@ -24,7 +24,7 @@ export const Reviews = () => {
 
   return (
     <div>
-      <ul className={ css.ReviewList}>
+      <div className={css.ReviewList}>
         {reviews.map(review => (
           <ReviewItem
             key={review.id}
@@ -32,7 +32,7 @@ export const Reviews = () => {
             content={review.content}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

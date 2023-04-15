@@ -1,4 +1,4 @@
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { HomePage } from '../../pages/HomePage/HomePage';
 import { MoviesPage } from '../../pages/MoviesPage/MoviesPage';
 import { MovieDetailsPage } from '../../pages/MovieDetailsPage/MovieDetailsPage';
