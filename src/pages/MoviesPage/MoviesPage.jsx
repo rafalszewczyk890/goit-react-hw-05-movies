@@ -15,6 +15,7 @@ export const MoviesPage = () => {
   const handleSubmit = async event => {
     event.preventDefault();
     setSearchParams({ query: event.target[0].value });
+    event.target[0].value = '';
   };
 
   useEffect(() => {
@@ -34,7 +35,9 @@ export const MoviesPage = () => {
       <Searchbar onSubmit={handleSubmit} />
       <div>MoviesPage</div>
 
-      {foundMovies.length > 1 && <MovieList movies={foundMovies} />}
+      {foundMovies.length > 1 && (
+        <MovieList movies={foundMovies} title={'Search results'} />
+      )}
     </>
   );
 };

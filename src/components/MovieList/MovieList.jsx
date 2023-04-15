@@ -1,10 +1,10 @@
 import { MovieListItem } from '../MovieListItem/MovieListItem';
 import css from 'components/MovieList/MovieList.module.css';
 
-export const MovieList = ({ movies }) => {
+export const MovieList = ({ movies, title }) => {
   return (
     <>
-      <h3 className={css.Title}>Trending today</h3>
+      <h3 className={css.Title}>{title}</h3>
       <ul className={css.MovieList}>
         {movies.map(movie => (
           <MovieListItem
@@ -12,6 +12,7 @@ export const MovieList = ({ movies }) => {
             id={movie.id}
             title={movie.title}
             name={movie.name}
+            year={movie.release_date}
           />
         ))}
       </ul>

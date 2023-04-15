@@ -10,7 +10,7 @@ export const HomePage = () => {
 
   useEffect(() => {
     const fetch = async () => {
-      const response = await axios.get(`trending/all/day?api_key=${API_KEY}`);
+      const response = await axios.get(`trending/movie/day?api_key=${API_KEY}`);
       console.log(response.data.results);
       setTrendingMovies(response.data.results);
     };
@@ -20,7 +20,7 @@ export const HomePage = () => {
   return (
     <>
       <div className={css.Title}>Welcome to MovieFinder!</div>
-      <MovieList movies={trendingMovies} />
+      <MovieList movies={trendingMovies} title={'Trending today'} />
     </>
   );
 };
