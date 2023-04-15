@@ -13,8 +13,6 @@ export const MoviesPage = () => {
   const navigate = useNavigate();
   const query = searchParams.get('query');
 
-  useEffect(() => {}, []);
-
   const handleSubmit = async event => {
     event.preventDefault();
     navigate(`?query=${event.target[0].value}`);

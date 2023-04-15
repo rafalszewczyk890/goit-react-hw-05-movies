@@ -30,7 +30,7 @@ export const MovieDetailsPage = () => {
           setError(error);
         });
       setMovie(response.data);
-      console.log(response.data);
+
       console.log(error);
     };
     fetch();
