@@ -3,7 +3,7 @@ import css from 'components/MovieList/MovieList.module.css';
 
 export const MovieList = ({ movies, title }) => {
   return (
-    <>
+    <div className={css.Container}>
       <h3 className={css.Title}>{title}</h3>
       <ul className={css.MovieList}>
         {movies.map(movie => (
@@ -16,6 +16,6 @@ export const MovieList = ({ movies, title }) => {
           />
         ))}
       </ul>
-    </>
+    </div>
   );
 };

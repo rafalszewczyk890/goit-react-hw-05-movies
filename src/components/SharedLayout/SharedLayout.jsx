@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import css from 'components/SharedLayout/SharedLayout.module.css';
 
 const StyledNavLink = styled(NavLink)`
-  color: white;
+  color: #e9c46a;
 
   &.active {
-    color: orange;
+    color: #f4a261;
   }
 `;
 

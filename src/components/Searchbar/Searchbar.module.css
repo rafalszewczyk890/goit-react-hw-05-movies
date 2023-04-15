@@ -1,0 +1,30 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Input {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.Button {
+  max-width: 300px;
+  margin: 0 auto;
+  background-color: #2a9d8f;
+  color: #e9c46a;
+  padding: 10px;
+  border-radius: 3px;
+  font-weight: 800;
+  border: none;
+  transition: 250ms;
+}
+
+.Button:hover {
+  background-color: #264653;
+  cursor: pointer;
+}

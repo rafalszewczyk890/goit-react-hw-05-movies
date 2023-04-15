@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { ReviewItem } from '../ReviewItem/ReviewItem';
+import css from './Reviews.module.css';
 import axios from 'axios';
 
 export const Reviews = () => {
@@ -23,7 +24,7 @@ export const Reviews = () => {
 
   return (
     <div>
-      <ul>
+      <ul className={ css.ReviewList}>
         {reviews.map(review => (
           <ReviewItem
             key={review.id}

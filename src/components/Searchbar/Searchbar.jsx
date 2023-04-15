@@ -1,10 +1,14 @@
+import css from './Searchbar.module.css';
+
 export const Searchbar = ({ onSubmit }) => {
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input type="text"></input>
-        <button type="submit">Search</button>
+    <div>
+      <form className={css.Container} onSubmit={onSubmit}>
+        <input className={css.Input} type="text"></input>
+        <button className={css.Button} type="submit">
+          Search
+        </button>
       </form>
-    </>
+    </div>
   );
 };

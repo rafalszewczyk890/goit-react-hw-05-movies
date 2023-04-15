@@ -33,7 +33,6 @@ export const MoviesPage = () => {
   return (
     <>
       <Searchbar onSubmit={handleSubmit} />
-      <div>MoviesPage</div>
 
       {foundMovies.length > 1 && (
         <MovieList movies={foundMovies} title={'Search results'} />

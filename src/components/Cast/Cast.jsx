@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { CastMember } from '../CastMember/CastMember';
+import css from './Cast.module.css';
 import axios from 'axios';
 
 export const Cast = () => {
@@ -21,7 +22,7 @@ export const Cast = () => {
     fetch();
   }, []);
   return (
-    <div>
+    <div className={css.CastContainer}>
       {cast.map(actor => (
         <CastMember
           key={actor.id}

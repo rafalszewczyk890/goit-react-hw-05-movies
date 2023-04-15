@@ -3,12 +3,12 @@ import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import css from './MovieDetailsPage.module.css';
 
 const StyledNavLink = styled(NavLink)`
-  color: black;
-
+  color: #e9c46a;
   &.active {
-    color: orange;
+    color: #f4a261;
   }
 `;
 
@@ -39,25 +39,34 @@ export const MovieDetailsPage = () => {
       {error ? (
         <p>Movie not found</p>
       ) : (
-        <>
-          <div>MovieDetailsPage: {movieId}</div>
-          <p>
-            Title: {movie.title} {movie.code} (
+        <div className={css.DetailsContainer}>
+          <p className={css.MovieTitle}>
+            {movie.title} {movie.code} (
             {new Date(movie.release_date).getFullYear()})
           </p>
           <img
+            className={css.Image}
             src={`https://image.tmdb.org/t/p/w300` + movie.poster_path}
             alt={movie.title}
           ></img>
-          <p>User score: {movie.vote_average}</p>
-          <h3>Overview</h3>
-          <div>{movie.overview}</div>
-          <h3>Genres</h3>
+          <div className={css.MovieInfo}>
+            <h3>User score: {movie.vote_average}</h3>
+            <div>
+              <h3>Overview</h3>
+              <div>{movie.overview}</div>
+            </div>
+          </div>
 
-          <StyledNavLink to="cast">See cast</StyledNavLink>
-          <StyledNavLink to="reviews">See reviews</StyledNavLink>
+          <div className={css.Navigate}>
+            <StyledNavLink className={css.Button} to="cast">
+              See cast
+            </StyledNavLink>
+            <StyledNavLink className={css.Button} to="reviews">
+              See reviews
+            </StyledNavLink>
+          </div>
           <Outlet />
-        </>
+        </div>
       )}
     </>
   );

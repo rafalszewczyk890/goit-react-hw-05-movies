@@ -1,0 +1,9 @@
+.Container {
+  font-size: x-large;
+  color: #264653;
+}
+
+.Image {
+  border-radius: 3px;
+  box-shadow: 0px 0px 24px 0px #2a9d8f;
+}
