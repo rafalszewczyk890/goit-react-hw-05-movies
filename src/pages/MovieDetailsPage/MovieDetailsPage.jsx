@@ -1,5 +1,10 @@
-import { Outlet, NavLink } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import {
+  Outlet,
+  NavLink,
+  useLocation,
+  useParams,
+  Link,
+} from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
@@ -13,6 +18,9 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 export const MovieDetailsPage = () => {
+  const location = useLocation();
+  console.log(location.state);
+
   const [movie, setMovie] = useState({});
   const [error, setError] = useState(null);
   const { movieId } = useParams();
@@ -40,6 +48,9 @@ export const MovieDetailsPage = () => {
         <p>Movie not found</p>
       ) : (
         <div className={css.DetailsContainer}>
+          <Link className={css.BackButton} to={location.state.from}>
+            Go back
+          </Link>
           <p className={css.MovieTitle}>
             {movie.title} {movie.code} (
             {new Date(movie.release_date).getFullYear()})
@@ -58,10 +69,18 @@ export const MovieDetailsPage = () => {
           </div>
 
           <div className={css.Navigate}>
-            <StyledNavLink className={css.Button} to="cast">
+            <StyledNavLink
+              className={css.Button}
+              to="cast"
+              state={{ from: '/movies' }}
+            >
               See cast
             </StyledNavLink>
-            <StyledNavLink className={css.Button} to="reviews">
+            <StyledNavLink
+              className={css.Button}
+              to="reviews"
+              state={{ from: '/movies' }}
+            >
               See reviews
             </StyledNavLink>
           </div>

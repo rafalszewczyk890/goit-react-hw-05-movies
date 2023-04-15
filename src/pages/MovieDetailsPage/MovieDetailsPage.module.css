@@ -37,8 +37,22 @@
 
 .Button {
   background-color: #264653;
-  
+
   padding: 10px;
   border-radius: 3px;
   text-decoration: none;
+}
+
+.BackButton {
+  background-color: #264653;
+  padding: 10px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #e9c46a;
+  font-weight: 800;
+  transition: 250ms;
+}
+
+.BackButton:hover {
+  color: #e76f51;
 }
