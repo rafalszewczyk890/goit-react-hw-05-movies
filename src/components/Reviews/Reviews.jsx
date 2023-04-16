@@ -20,6 +20,7 @@ const Reviews = () => {
       console.log(response.data.results);
     };
     fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (reviews.length > 0) {
