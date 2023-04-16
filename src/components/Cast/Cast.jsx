@@ -20,7 +20,7 @@ const Cast = () => {
       console.log(response.data.cast);
     };
     fetch();
-  }, []);
+  }, [movieId]);
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import styled from 'styled-components';
 import css from 'components/SharedLayout/SharedLayout.module.css';
-import { lazy, Suspense } from 'react';
+import { Suspense } from 'react';
 
 const StyledNavLink = styled(NavLink)`
   color: #e9c46a;
