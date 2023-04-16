@@ -21,6 +21,7 @@ const Reviews = () => {
     };
     fetch();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    // test
   }, []);
 
   if (reviews.length > 0) {
