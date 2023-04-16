@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import css from 'pages/HomePage/HomePage.module.css';
 
-export const HomePage = () => {
+const HomePage = () => {
   const API_KEY = '3734bfd99a42268714d80d895f68afb5';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -24,3 +24,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;

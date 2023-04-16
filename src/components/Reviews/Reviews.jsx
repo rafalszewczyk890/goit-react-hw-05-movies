@@ -4,7 +4,7 @@ import { ReviewItem } from '../ReviewItem/ReviewItem';
 import css from './Reviews.module.css';
 import axios from 'axios';
 
-export const Reviews = () => {
+const Reviews = () => {
   const API_KEY = '3734bfd99a42268714d80d895f68afb5';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
@@ -40,3 +40,5 @@ export const Reviews = () => {
     return <div className={css.NoReview}>No reviews for this movie</div>;
   }
 };
+
+export default Reviews;

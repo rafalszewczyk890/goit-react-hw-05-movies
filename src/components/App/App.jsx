@@ -1,16 +1,16 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
-import { HomePage } from '../../pages/HomePage/HomePage';
-import { MoviesPage } from '../../pages/MoviesPage/MoviesPage';
-import { MovieDetailsPage } from '../../pages/MovieDetailsPage/MovieDetailsPage';
-import { NotFoundPage } from '../../pages/NotFoundPage/NotFoundPage';
-import { Cast } from '../Cast/Cast';
-import { Reviews } from '../Reviews/Reviews';
+import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from '../SharedLayout/SharedLayout';
+import { lazy } from 'react';
+
+const HomePage = lazy(() => import('../../pages/HomePage/HomePage'));
+const MoviesPage = lazy(() => import('../../pages/MoviesPage/MoviesPage'));
+const MovieDetailsPage = lazy(() =>
+  import('../../pages/MovieDetailsPage/MovieDetailsPage')
+);
+const Cast = lazy(() => import('../Cast/Cast'));
+const Reviews = lazy(() => import('../Reviews/Reviews'));
 
 export const App = () => {
-  const location = useLocation();
-  console.log(location);
-
   return (
     <div>
       <Routes>
@@ -22,7 +22,7 @@ export const App = () => {
             <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
   );

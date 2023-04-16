@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import css from './MoviesPage.module.css';
 import axios from 'axios';
 
-export const MoviesPage = () => {
+const MoviesPage = () => {
   const API_KEY = '3734bfd99a42268714d80d895f68afb5';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
   const [searchParams, setSearchParams] = useSearchParams();
@@ -42,3 +42,5 @@ export const MoviesPage = () => {
     </>
   );
 };
+
+export default MoviesPage;

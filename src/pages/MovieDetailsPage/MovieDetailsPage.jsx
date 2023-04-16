@@ -17,14 +17,13 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export const MovieDetailsPage = () => {
+const MovieDetailsPage = () => {
   const location = useLocation();
-  console.log(location.state);
-
   const [movie, setMovie] = useState({});
   const [error, setError] = useState(null);
   const { movieId } = useParams();
 
+  const backLinkHref = location.state?.from ?? '/';
   const API_KEY = '3734bfd99a42268714d80d895f68afb5';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
@@ -40,6 +39,7 @@ export const MovieDetailsPage = () => {
       setMovie(response.data);
     };
     fetch();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -48,7 +48,7 @@ export const MovieDetailsPage = () => {
         <p>Movie not found</p>
       ) : (
         <div className={css.DetailsContainer}>
-          <Link className={css.BackButton} to={location.state.from}>
+          <Link className={css.BackButton} to={backLinkHref}>
             Go back
           </Link>
           <p className={css.MovieTitle}>
@@ -69,18 +69,10 @@ export const MovieDetailsPage = () => {
           </div>
 
           <div className={css.Navigate}>
-            <StyledNavLink
-              className={css.Button}
-              to="cast"
-              state={{ from: '/movies' }}
-            >
+            <StyledNavLink className={css.Button} to="cast">
               See cast
             </StyledNavLink>
-            <StyledNavLink
-              className={css.Button}
-              to="reviews"
-              state={{ from: '/movies' }}
-            >
+            <StyledNavLink className={css.Button} to="reviews">
               See reviews
             </StyledNavLink>
           </div>
@@ -90,3 +82,5 @@ export const MovieDetailsPage = () => {
     </>
   );
 };
+
+export default MovieDetailsPage;

@@ -4,7 +4,7 @@ import { CastMember } from '../CastMember/CastMember';
 import css from './Cast.module.css';
 import axios from 'axios';
 
-export const Cast = () => {
+const Cast = () => {
   const API_KEY = '3734bfd99a42268714d80d895f68afb5';
   axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
 
@@ -40,3 +40,5 @@ export const Cast = () => {
     </>
   );
 };
+
+export default Cast;
